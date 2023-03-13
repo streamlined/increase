@@ -1,0 +1,185 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://sandbox.increase.com/transactions
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Increase v0.1.0
+      Content-Type:
+      - application/json
+      Authorization:
+      - Bearer yFj6HZkoI1qJa9EVjLVCwYNbYGjNS0KH
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - deny
+      Vary:
+      - Origin
+      X-Request-Id:
+      - 58121f3af96f8d7593aee1d67ffafe20
+      Request-Id:
+      - 58121f3af96f8d7593aee1d67ffafe20
+      Content-Length:
+      - '4560'
+      Date:
+      - Mon, 13 Mar 2023 20:35:07 GMT
+      Via:
+      - 1.1 google
+      Alt-Svc:
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+    body:
+      encoding: UTF-8
+      string: |
+        {
+          "data": [
+            {
+              "account_id": "sandbox_account_0guv210nsgud6bzixayu",
+              "amount": 10000,
+              "currency": "USD",
+              "created_at": "2023-03-13T20:20:17Z",
+              "date": "2023-03-13",
+              "description": "new test",
+              "id": "sandbox_transaction_lvkxe4dlgmswglgc8usy",
+              "route_id": null,
+              "route_type": null,
+              "source": {
+                "category": "ach_transfer_intention",
+                "ach_transfer_intention": {
+                  "amount": -10000,
+                  "account_number": "1234",
+                  "routing_number": "123456789",
+                  "class_name": "ach_transfer_intention",
+                  "statement_descriptor": "new test",
+                  "template_id": null,
+                  "transfer_id": "sandbox_ach_transfer_ju9fm4enda8kygrbq3be"
+                },
+                "amount": -10000,
+                "class_name": "ach_transfer_intention",
+                "transfer_id": "sandbox_ach_transfer_ju9fm4enda8kygrbq3be",
+                "account_number": "1234",
+                "routing_number": "123456789",
+                "statement_descriptor": "new test",
+                "template_id": null
+              },
+              "type": "transaction"
+            },
+            {
+              "account_id": "sandbox_account_0guv210nsgud6bzixayu",
+              "amount": 1000,
+              "currency": "USD",
+              "created_at": "2023-03-13T20:19:57Z",
+              "date": "2023-03-13",
+              "description": "new test",
+              "id": "sandbox_transaction_gdjec8aq55ze96gkigiu",
+              "route_id": null,
+              "route_type": null,
+              "source": {
+                "category": "ach_transfer_intention",
+                "ach_transfer_intention": {
+                  "amount": -1000,
+                  "account_number": "1234",
+                  "routing_number": "123456789",
+                  "class_name": "ach_transfer_intention",
+                  "statement_descriptor": "new test",
+                  "template_id": null,
+                  "transfer_id": "sandbox_ach_transfer_dmvxm7wqvmquuw0ltdi7"
+                },
+                "amount": -1000,
+                "class_name": "ach_transfer_intention",
+                "transfer_id": "sandbox_ach_transfer_dmvxm7wqvmquuw0ltdi7",
+                "account_number": "1234",
+                "routing_number": "123456789",
+                "statement_descriptor": "new test",
+                "template_id": null
+              },
+              "type": "transaction"
+            },
+            {
+              "account_id": "sandbox_account_kkcjd5zbximtpjn980tu",
+              "amount": 50000,
+              "currency": "USD",
+              "created_at": "2023-03-13T20:19:32Z",
+              "date": "2023-03-13",
+              "description": "test",
+              "id": "sandbox_transaction_hc1mvl6rivhzemv1w0av",
+              "route_id": null,
+              "route_type": null,
+              "source": {
+                "category": "ach_transfer_intention",
+                "ach_transfer_intention": {
+                  "amount": -50000,
+                  "account_number": "243243234234243",
+                  "routing_number": "123456789",
+                  "class_name": "ach_transfer_intention",
+                  "statement_descriptor": "test",
+                  "template_id": null,
+                  "transfer_id": "sandbox_ach_transfer_ic3ox269u16js99nwfo2"
+                },
+                "amount": -50000,
+                "class_name": "ach_transfer_intention",
+                "transfer_id": "sandbox_ach_transfer_ic3ox269u16js99nwfo2",
+                "account_number": "243243234234243",
+                "routing_number": "123456789",
+                "statement_descriptor": "test",
+                "template_id": null
+              },
+              "type": "transaction"
+            },
+            {
+              "account_id": "sandbox_account_0guv210nsgud6bzixayu",
+              "amount": 10000,
+              "currency": "USD",
+              "created_at": "2023-03-13T20:17:49Z",
+              "date": "2023-03-13",
+              "description": "Inbound check",
+              "id": "sandbox_transaction_4xdy2xwuvwhfmqfxb7ed",
+              "route_id": null,
+              "route_type": null,
+              "source": {
+                "category": "check_deposit_acceptance",
+                "check_deposit_acceptance": {
+                  "amount": 10000,
+                  "currency": "USD",
+                  "account_number": "146559642",
+                  "routing_number": "573036631",
+                  "auxiliary_on_us": null,
+                  "serial_number": null,
+                  "check_deposit_id": "sandbox_check_deposit_1kmdzi2hj3v8qrymetns",
+                  "class_name": "check_deposit_acceptance",
+                  "file_id": "sandbox_file_tylhbvicgxy9cwwmo1xu"
+                },
+                "amount": 10000,
+                "currency": "USD",
+                "class_name": "check_deposit_acceptance",
+                "file_id": "sandbox_file_tylhbvicgxy9cwwmo1xu",
+                "account_number": "146559642",
+                "routing_number": "573036631",
+                "auxiliary_on_us": null,
+                "serial_number": null,
+                "check_deposit_id": "sandbox_check_deposit_1kmdzi2hj3v8qrymetns"
+              },
+              "type": "transaction"
+            }
+          ],
+          "next_cursor": null,
+          "response_metadata": {
+            "next_cursor": null
+          }
+        }
+  recorded_at: Mon, 13 Mar 2023 20:35:07 GMT
+recorded_with: VCR 6.1.0

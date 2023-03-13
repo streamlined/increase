@@ -13,21 +13,21 @@ module Increase
         route_id: nil,
         filters: {}
       )
-        get("transactions",
+        get("transactions",{
           account_id: account_id,
-          category_in: category_in,
-          created_at_after: created_at_after,
-          created_at_before: created_at_before,
-          created_at_on_or_after: created_at_on_or_after,
-          created_at_on_or_before: created_at_on_or_before,
+          'category': category_in,
+          'created_at.after': created_at_after,
+          'created_at.before': created_at_before,
+          'created_at.on_or_after': created_at_on_or_after,
+          'created_at.on_or_before': created_at_on_or_before,
           cursor: cursor,
           limit: limit,
-          route_id: route_id,
-          filters: filters
+          route_id: route_id
+        }.compact
         )
       end
 
-      def get_transactions(transaction_id:)
+      def get_transaction(transaction_id:)
         get("transactions/#{transaction_id}")
       end
 

@@ -3,11 +3,11 @@ module Increase
     module AchTransfers
       def create_ach_transfer(
         direction: ,
-        account_id:, 
-        account_number: nil, 
-        routing_number: nil, 
+        account_id:,
+        account_number: nil,
+        routing_number: nil,
         addendum: nil,
-        amount:, 
+        amount:,
         company_descriptive_date: nil,
         company_discretionary_data: nil,
         company_entry_description: nil,
@@ -17,18 +17,18 @@ module Increase
         funding: nil,
         individual_id: nil,
         individual_name: nil,
-        required_approval: nil,
+        require_approval: false,
         standard_entry_class_code: nil,
         statement_descriptor:
-      ) 
+      )
         abs_amount = amount.abs
         directional_amount = direction == "credit" ? abs_amount : -abs_amount
         post("ach_transfers",
-          account_id: account_id, 
-          account_number: account_number, 
-          routing_number: routing_number, 
+          account_id: account_id,
+          account_number: account_number,
+          routing_number: routing_number,
           addendum: addendum,
-          amount: directional_amount, 
+          amount: directional_amount,
           company_descriptive_date: company_descriptive_date,
           company_discretionary_data: company_discretionary_data,
           company_entry_description: company_entry_description,
@@ -38,7 +38,7 @@ module Increase
           funding: funding,
           individual_id: individual_id,
           individual_name: individual_name,
-          required_approval: required_approval,
+          require_approval: require_approval,
           standard_entry_class_code: standard_entry_class_code,
           statement_descriptor: statement_descriptor
         )
@@ -55,7 +55,7 @@ module Increase
         external_account_id: nil,
         limit: nil,
         filters: {})
-        get("ach_transfers", 
+        get("ach_transfers",
           account_id: account_id,
           'created_at.after': created_at_after,
           'created_at.before': created_at_before,

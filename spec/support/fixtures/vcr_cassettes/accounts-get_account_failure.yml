@@ -1,0 +1,53 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://sandbox.increase.com/accounts/bobross
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Increase v0.1.0
+      Content-Type:
+      - application/json
+      Authorization:
+      - Bearer yFj6HZkoI1qJa9EVjLVCwYNbYGjNS0KH
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 404
+      message: Not Found
+    headers:
+      Content-Type:
+      - application/problem+json
+      Vary:
+      - Origin
+      X-Request-Id:
+      - 5dca0736abf65b227bfd3330042e0d5f
+      Request-Id:
+      - 5dca0736abf65b227bfd3330042e0d5f
+      X-Content-Type-Options:
+      - nosniff
+      Content-Length:
+      - '177'
+      Date:
+      - Mon, 13 Mar 2023 21:19:36 GMT
+      Via:
+      - 1.1 google
+      Alt-Svc:
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+    body:
+      encoding: UTF-8
+      string: |
+        {
+          "status": 404,
+          "type": "object_not_found_error",
+          "title": "Could not find the specified object.",
+          "detail": "No resource of type account was found with ID bobross."
+        }
+  recorded_at: Mon, 13 Mar 2023 21:19:36 GMT
+recorded_with: VCR 6.1.0

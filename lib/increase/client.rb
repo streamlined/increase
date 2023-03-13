@@ -1,8 +1,11 @@
 module Increase
   class Client < BaseClient
     autoload :Accounts, "increase/client/accounts"
-
+    autoload :Transactions, "increase/client/transactions"
+    autoload :AchTransfers, "increase/client/ach_transfers"
     include Accounts
+    include Transactions
+    include AchTransfers
 
     def initialize(api_base_url: nil, api_key: nil, headers: {})
       api_base_url ||= Increase.api_base_url

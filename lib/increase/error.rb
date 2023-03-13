@@ -24,7 +24,7 @@ module Increase
     end
 
     def self.parse_error(body)
-      [body["error"], nil]
+      [body["detail"], nil]
     end
 
     def self.error_class(status)

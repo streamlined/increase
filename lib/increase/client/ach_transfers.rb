@@ -2,6 +2,7 @@ module Increase
   class Client
     module AchTransfers
       def create_ach_transfer(
+        direction: ,
         account_id:, 
         account_number: nil, 
         routing_number: nil, 
@@ -20,12 +21,14 @@ module Increase
         standard_entry_class_code: nil,
         statement_descriptor:
       ) 
+        abs_amount = amount.abs
+        directional_amount = direction == "credit" ? abs_amount : -abs_amount
         post("ach_transfers",
           account_id: account_id, 
           account_number: account_number, 
           routing_number: routing_number, 
           addendum: addendum,
-          amount: amount, 
+          amount: directional_amount, 
           company_descriptive_date: company_descriptive_date,
           company_discretionary_data: company_discretionary_data,
           company_entry_description: company_entry_description,

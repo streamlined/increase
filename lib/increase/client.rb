@@ -1,4 +1,4 @@
-module Increase
+class Increase
   class Client < BaseClient
     autoload :Accounts, "increase/client/accounts"
     autoload :Transactions, "increase/client/transactions"

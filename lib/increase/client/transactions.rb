@@ -1,4 +1,4 @@
-module Increase
+class Increase
   class Client
     module Transactions
       def get_all_transactions(

@@ -12,7 +12,8 @@ RSpec.describe Increase::Client::AchTransfers do
         ach_transfer = client.create_ach_transfer(
           account_id: "acc_1",
           statement_descriptor: "test ach transfer",
-          amount: 100
+          amount: 100,
+          direction: "to_increase"
         )
 
         expect(ach_transfer).to be_a(Hash)

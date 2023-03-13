@@ -36,10 +36,8 @@ module Increase
         })
       end
 
-      def get_all_account_numbers(account_id: nil, status: "active")
-        query_params = "?status=#{status}"
-        query_params += "&account_id=#{account_id}" if account_id
-        get("/account_numbers#{query_params}")
+      def get_all_account_numbers(account_id: nil, filters: {status: "active"})
+        get("/account_numbers", filters)
       end
 
       def get_account_number(account_number_id:)

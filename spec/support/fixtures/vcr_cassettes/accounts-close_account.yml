@@ -1,0 +1,142 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://sandbox.increase.com/accounts
+    body:
+      encoding: UTF-8
+      string: '{"entity_id":null,"informational_entity_id":null,"name":"rspec test
+        creation"}'
+    headers:
+      User-Agent:
+      - Increase v0.1.0
+      Content-Type:
+      - application/json
+      Authorization:
+      - Bearer yFj6HZkoI1qJa9EVjLVCwYNbYGjNS0KH
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - deny
+      Vary:
+      - Origin
+      X-Request-Id:
+      - b39724b5f00eb9746a6866f6c55731a8
+      Request-Id:
+      - b39724b5f00eb9746a6866f6c55731a8
+      Content-Length:
+      - '610'
+      Date:
+      - Mon, 13 Mar 2023 21:24:51 GMT
+      Via:
+      - 1.1 google
+      Alt-Svc:
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+    body:
+      encoding: UTF-8
+      string: |
+        {
+          "balances": {
+            "current_balance": 0,
+            "available_balance": 0
+          },
+          "balance": 0,
+          "bank": "first_internet_bank",
+          "created_at": "2023-03-13T21:24:51Z",
+          "currency": "USD",
+          "entity_id": "sandbox_entity_nojbzdgemksqqrtlj7jk",
+          "informational_entity_id": null,
+          "id": "sandbox_account_h4tk6k6n3xp2m47ks6js",
+          "interest_accrued": "0.0",
+          "interest_accrued_at": null,
+          "name": "rspec test creation",
+          "path": "/accounts/sandbox_account_h4tk6k6n3xp2m47ks6js",
+          "status": "open",
+          "replacement": {
+            "replaced_account_id": null,
+            "replaced_by_account_id": null
+          },
+          "type": "account"
+        }
+  recorded_at: Mon, 13 Mar 2023 21:24:51 GMT
+- request:
+    method: post
+    uri: https://sandbox.increase.com/accounts/sandbox_account_h4tk6k6n3xp2m47ks6js/close
+    body:
+      encoding: UTF-8
+      string: "{}"
+    headers:
+      User-Agent:
+      - Increase v0.1.0
+      Content-Type:
+      - application/json
+      Authorization:
+      - Bearer yFj6HZkoI1qJa9EVjLVCwYNbYGjNS0KH
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - deny
+      Vary:
+      - Origin
+      X-Request-Id:
+      - 18fb3ba506327f244dd2163662b3cc97
+      Request-Id:
+      - 18fb3ba506327f244dd2163662b3cc97
+      Content-Length:
+      - '612'
+      Date:
+      - Mon, 13 Mar 2023 21:24:51 GMT
+      Via:
+      - 1.1 google
+      Alt-Svc:
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+    body:
+      encoding: UTF-8
+      string: |
+        {
+          "balances": {
+            "current_balance": 0,
+            "available_balance": 0
+          },
+          "balance": 0,
+          "bank": "first_internet_bank",
+          "created_at": "2023-03-13T21:24:51Z",
+          "currency": "USD",
+          "entity_id": "sandbox_entity_nojbzdgemksqqrtlj7jk",
+          "informational_entity_id": null,
+          "id": "sandbox_account_h4tk6k6n3xp2m47ks6js",
+          "interest_accrued": "0.0",
+          "interest_accrued_at": null,
+          "name": "rspec test creation",
+          "path": "/accounts/sandbox_account_h4tk6k6n3xp2m47ks6js",
+          "status": "closed",
+          "replacement": {
+            "replaced_account_id": null,
+            "replaced_by_account_id": null
+          },
+          "type": "account"
+        }
+  recorded_at: Mon, 13 Mar 2023 21:24:51 GMT
+recorded_with: VCR 6.1.0

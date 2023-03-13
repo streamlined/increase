@@ -1,7 +1,7 @@
 module Increase
   class Client
     module Accounts
-      def get_all_accounts(filters: {})
+      def get_all_accounts(filters: {status: "open"}) # default to only open accounts
         get("accounts", filters)
       end
 
@@ -27,6 +27,23 @@ module Increase
 
       def close_account(account_id:)
         post("accounts/#{account_id}/close")
+      end
+
+      def create_account_number(account_id:, name:)
+        post("/account_numbers", {
+          account_id: account_id,
+          name: name
+        })
+      end
+
+      def get_all_account_numbers(account_id: nil, status: "active")
+        query_params = "?status=#{status}"
+        query_params += "&account_id=#{account_id}" if account_id
+        get("/account_numbers#{query_params}")
+      end
+
+      def get_account_number(account_number_id:)
+        get("/account_numbers/#{account_number_id}")
       end
     end
   end

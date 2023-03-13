@@ -23,7 +23,7 @@ module Increase
           cursor: cursor,
           limit: limit,
           route_id: route_id,
-          filters
+          filters: filters
         )
       end
 

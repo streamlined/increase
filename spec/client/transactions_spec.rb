@@ -6,7 +6,7 @@ RSpec.describe Increase::Client::Transactions do
     )
   }
 
-  context 'accounts' do
+  context 'transaction' do
 
   end
 end

@@ -1,6 +1,6 @@
 module Increase
   class Client
-    module ach_transfers
+    module AchTransfers
       def create_ach_transfer(
         account_id:, 
         account_number: nil, 
@@ -20,7 +20,7 @@ module Increase
         standard_entry_class_code: nil,
         statement_descriptor:
       ) 
-        post("ach_transfers", {
+        post("ach_transfers",
           account_id: account_id, 
           account_number: account_number, 
           routing_number: routing_number, 
@@ -38,7 +38,7 @@ module Increase
           required_approval: required_approval,
           standard_entry_class_code: standard_entry_class_code,
           statement_descriptor: statement_descriptor
-        }
+        )
       end
 
 

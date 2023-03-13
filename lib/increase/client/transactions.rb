@@ -1,8 +1,30 @@
 module Increase
   class Client
     module Transactions
-      def get_all_transactions(filters: {})
-        get("transactions", filters)
+      def get_all_transactions(
+        account_id: nil,
+        category_in: nil,
+        created_at_after: nil,
+        created_at_before: nil,
+        created_at_on_or_after: nil,
+        created_at_on_or_before: nil,
+        cursor: nil,
+        limit: nil,
+        route_id: nil,
+        filters: {}
+      )
+        get("transactions",
+          account_id: account_id,
+          category_in: category_in,
+          created_at_after: created_at_after,
+          created_at_before: created_at_before,
+          created_at_on_or_after: created_at_on_or_after,
+          created_at_on_or_before: created_at_on_or_before,
+          cursor: cursor,
+          limit: limit,
+          route_id: route_id,
+          filters
+        )
       end
 
       def get_transactions(transaction_id:)

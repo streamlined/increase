@@ -17,6 +17,8 @@ VCR.configure do |config|
       match.captures.first
     end
   }
+  config.allow_http_connections_when_no_cassette = true
+
 end
 
 Dir["#{__dir__}/support/**/*.rb"].each {|f| require f }

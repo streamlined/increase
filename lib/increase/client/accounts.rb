@@ -43,6 +43,18 @@ module Increase
       def get_account_number(account_number_id:)
         get("/account_numbers/#{account_number_id}")
       end
+
+      def cancel_account_number(account_number_id:)
+        patch("/account_numbers/#{account_number_id}", {
+          status: 'canceled'
+        })
+      end
+
+      def disable_account_number(account_number_id:)
+        patch("/account_numbers/#{account_number_id}", {
+          status: 'disabled'
+        })
+      end
     end
   end
 end

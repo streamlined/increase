@@ -1,4 +1,4 @@
-class Increase
+module Increase
   class Client
     module Accounts
       def get_all_accounts(filters: {status: "open"}) # default to only open accounts

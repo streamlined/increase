@@ -1,4 +1,4 @@
-class Increase
+module Increase
   class Client
     module AchTransfers
       def create_ach_transfer(

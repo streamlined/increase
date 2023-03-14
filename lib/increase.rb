@@ -6,7 +6,7 @@ require "date"
 
 require_relative "increase/version"
 
-class Increase
+module Increase
   autoload :BaseClient, "increase/base_client"
   autoload :Client, "increase/client"
   autoload :Types, "increase/types"

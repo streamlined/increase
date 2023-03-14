@@ -21,6 +21,8 @@ module Increase
         standard_entry_class_code: nil,
         statement_descriptor:
       )
+        raise StandardError.new("Invalid direction: Must be credit or debit") unless ["credit","debit"].include? direction
+
         abs_amount = amount.abs
         directional_amount = direction == "credit" ? abs_amount : -abs_amount
         post("ach_transfers",

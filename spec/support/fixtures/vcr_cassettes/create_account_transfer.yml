@@ -1,0 +1,68 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://sandbox.increase.com/account_transfers
+    body:
+      encoding: UTF-8
+      string: '{"account_id":"sandbox_account_kkcjd5zbximtpjn980tu","amount":100,"description":"test
+        account transfer","destination_account_id":"sandbox_account_eph1lxpbg4blsrr99pgb","require_approval":false}'
+    headers:
+      User-Agent:
+      - Increase v0.1.0
+      Content-Type:
+      - application/json
+      Authorization:
+      - Bearer yFj6HZkoI1qJa9EVjLVCwYNbYGjNS0KH
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - deny
+      Vary:
+      - Origin
+      X-Request-Id:
+      - 1df4b914944740608ac4213aeb6f31ec
+      Request-Id:
+      - 1df4b914944740608ac4213aeb6f31ec
+      Content-Length:
+      - '668'
+      Date:
+      - Tue, 14 Mar 2023 22:05:17 GMT
+      Via:
+      - 1.1 google
+      Alt-Svc:
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+    body:
+      encoding: UTF-8
+      string: |
+        {
+          "id": "sandbox_account_transfer_wyjxm1heoiiyn2txvft5",
+          "amount": 100,
+          "account_id": "sandbox_account_kkcjd5zbximtpjn980tu",
+          "currency": "USD",
+          "destination_account_id": "sandbox_account_eph1lxpbg4blsrr99pgb",
+          "destination_transaction_id": "sandbox_transaction_doyxlphamgyxdfkjgiyp",
+          "created_at": "2023-03-14T22:05:17Z",
+          "description": "test account transfer",
+          "network": "account",
+          "status": "complete",
+          "template_id": null,
+          "transaction_id": "sandbox_transaction_c8xdoq0eu0bkp328yve7",
+          "path": "/transfers/accounts/sandbox_account_transfer_wyjxm1heoiiyn2txvft5",
+          "approval": null,
+          "cancellation": null,
+          "type": "account_transfer"
+        }
+  recorded_at: Tue, 14 Mar 2023 22:05:17 GMT
+recorded_with: VCR 6.1.0

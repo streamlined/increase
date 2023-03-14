@@ -1,4 +1,4 @@
-module Increase
+class Increase
   class BaseClient
 
     def initialize(api_base_url:, headers: )

@@ -13,9 +13,10 @@ module Increase
         route_id: nil,
         filters: {}
       )
+
         get("transactions",{
           account_id: account_id,
-          'category.in': category_in,
+          'category.in': %w(category_in),
           'created_at.after': created_at_after,
           'created_at.before': created_at_before,
           'created_at.on_or_after': created_at_on_or_after,

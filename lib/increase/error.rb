@@ -18,11 +18,37 @@ module Increase
     ServiceUnavailable    = Class.new(ServerError)
     GatewayTimeout        = Class.new(ServerError)
 
+    attr_reader :status
+    attr_reader :message
+    attr_reader :detail
+    attr_reader :type
+
+    def initialize(
+      status: 500,
+      detail: "Something went wrong with communication with Increase API.",
+      type: "API error"
+    )
+      super
+      @status = status
+      @detail = detail
+      @type = type
+    end
+
     def self.from_response(status, body, _headers)
-      message = parse_error(body)
-      status = message.dig(:status)
-      error = error_class(status)&.new(message)
-      error ||= ClientError.new(message)
+      parsed_error = parse_error(body)
+      status = parsed_error.dig(:status)
+      detail = parsed_error.dig(:detail) || parsed_error.dig(:title)
+      type = parsed_error.dig(:type)
+      error = error_class(status)&.new(
+        status: status,
+        detail: detail,
+        type: type,
+      )
+      error ||= ClientError.new(
+        status: status,
+        detail: detail,
+        type: type,
+      )
       error
     end
 

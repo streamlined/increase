@@ -19,35 +19,40 @@ module Increase
     GatewayTimeout        = Class.new(ServerError)
 
     attr_reader :status
-    attr_reader :message
     attr_reader :detail
     attr_reader :type
+    attr_reader :title
 
     def initialize(
       status: 500,
       detail: "Something went wrong with communication with Increase API.",
-      type: "API error"
+      type: "API error",
+      title: "Something went wrong with communication with Increase API."
     )
       super
       @status = status
       @detail = detail
       @type = type
+      @title = title
     end
 
     def self.from_response(status, body, _headers)
       parsed_error = parse_error(body)
       status = parsed_error.dig(:status)
-      detail = parsed_error.dig(:detail) || parsed_error.dig(:title)
+      detail = parsed_error.dig(:detail)
       type = parsed_error.dig(:type)
+      title = parsed_error.dig(:title)
       error = error_class(status)&.new(
         status: status,
         detail: detail,
         type: type,
+        title: title
       )
       error ||= ClientError.new(
         status: status,
         detail: detail,
         type: type,
+        title: title
       )
       error
     end

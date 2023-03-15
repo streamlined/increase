@@ -19,12 +19,20 @@ module Increase
     GatewayTimeout        = Class.new(ServerError)
 
     def self.from_response(status, body, _headers)
-      message, _code, _attribute = parse_error(body)
-      error_class(status).new(message)
+      message = parse_error(body)
+      status = message.dig(:status)
+      error = error_class(status)&.new(message)
+      error ||= ClientError.new(message)
+      error
     end
 
     def self.parse_error(body)
-      [body["detail"], nil]
+      {
+        detail: body.dig("detail"),
+        status: body.dig("status"),
+        title: body.dig("title"),
+        type: body.dig("type")
+      }
     end
 
     def self.error_class(status)

@@ -19,6 +19,10 @@ module Increase
              })
       end
 
+      def close_account(account_id:)
+        post("accounts/#{account_id}/close")
+      end
+
       def update_account(account_id:, name: nil)
         patch("accounts/#{account_id}", {
                 name: name

@@ -85,14 +85,16 @@ RSpec.describe Increase::Client::Accounts do
     describe 'create_account' do
       let(:action) {
         client.create_account(
-          name: "rspec test creation"
+          name: "rspec test creation",
+          program_id: 'sandbox_program_1'
         )
       }
 
       it 'returns an account' do
         VCR.use_cassette('accounts-create_account') do
           response = client.create_account(
-            name: "rspec test creation"
+            name: "rspec test creation",
+            program_id: 'sandbox_program_1'
           )
           expect(response).to be_a(Hash)
           expect(response).to include(
@@ -146,7 +148,8 @@ RSpec.describe Increase::Client::Accounts do
       it 'deletes the created account' do
         VCR.use_cassette('accounts-close_account') do
           account_to_close = client.create_account(
-            name: "rspec test creation"
+            name: "rspec test creation",
+            program_id: 'sandbox_program_1'
           )
           closed_account = client.close_account(account_id: account_to_close["id"])
           expect(closed_account).to be_a(Hash)

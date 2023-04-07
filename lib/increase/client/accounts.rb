@@ -9,7 +9,7 @@ module Increase
         get("accounts/#{account_id}")
       end
 
-      def create_account(entity_id: nil, informational_entity_id: nil, name:, program_id:)
+      def create_account(entity_id: nil, informational_entity_id: nil, name:, program_id: nil)
         post("accounts", {
               # needs to be a separate entity object (ID)
                entity_id: entity_id,
